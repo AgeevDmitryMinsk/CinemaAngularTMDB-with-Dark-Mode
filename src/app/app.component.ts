@@ -12,23 +12,11 @@ export class AppComponent {
   title = 'AgeevDmitryMinsk';
 
 
-  // ngOnInit(): void {
-  //   console.log(this.title);
-  // }
-
   @HostBinding('class') className = '';
 
   toggleControl = new FormControl(false);
 
   constructor(private dialog: MatDialog, private overlay: OverlayContainer) { }
-
-  public person_account() {
-    alert(`переход в режим работы с аккаунтом`);
-  }
-
-  public me() {
-    alert(`+375 29 616 40 88`);
-  }
 
   public shopping_cart() {
     alert(`Ваша корзина покупок`);
