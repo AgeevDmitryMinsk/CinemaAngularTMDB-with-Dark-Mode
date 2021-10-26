@@ -1,0 +1,54 @@
+.videoCard {
+  //color: white;
+  transition: transform 1000ms;
+  width: 500px;
+  margin: 1rem;
+  border-radius: 3px;
+  box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+
+}
+
+.videoCard:hover {
+  transform: scale(1.15);
+  border-radius: 13px;
+}
+
+.videoCard > img {
+  height: 300px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.videoCard:hover > h2 {
+}
+
+.overview {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-color: transparent;*/
+  background: rgba(0, 170, 238, 0.5);
+  padding: 1rem;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+
+.videoCard:hover .overview {
+  transform: translateY(-90%);
+}
+
+.buy-ticket {
+  background-color: orange;
+  //color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-top: 5px;
+}
+
