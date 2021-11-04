@@ -18,6 +18,8 @@ export class NavComponent implements OnInit {
 
 
   async fetchDataAgain(text: string) {
+    console.log(text);
+
 
     if (text == "Action") {
       const request = await axios.get(requests.fetchActionMovies);
@@ -41,44 +43,47 @@ export class NavComponent implements OnInit {
     //   this.movies = request.data.results;
     // }
 
-    // if (text == "Horror") {
-    //   const request = await axios.get(requests.fetchHorrorMovies);
-    //   console.log(request.data.results);
-    //   this.movies = request.data.results;
-    //
-    // }
-    // if (text == "Romance") {
-    //   const request = await axios.get(requests.fetchRomanceMovies);
-    //   console.log(request.data.results);
-    //   this.movies = request.data.results;
-    //
-    // }if (text == "Mystery") {
-    //   const request = await axios.get(requests.fetchMystery);
-    //   console.log(request.data.results);
-    //   this.movies = request.data.results;
-    //
-    // }if (text == "Sci-Fi") {
-    //   const request = await axios.get(requests.fetchSciFi);
-    //   console.log(request.data.results);
-    //   this.movies = request.data.results;
-    //
-    // }
-    // if (text == "Western") {
-    //   const request = await axios.get(requests.fetchWestern);
-    //   console.log(request.data.results);
-    //   this.movies = request.data.results;
-    //
-    // }if (text == "Animation") {
-    //   const request = await axios.get(requests.fetchAnimation);
-    //   console.log(request.data.results);
-    //   this.movies = request.data.results;
-    //
-    // }if (text == "Movie") {
-    //   const request = await axios.get(requests.fetchTV);
-    //   console.log(request.data.results);
-    //   this.movies = request.data.results;
-    //
-    // }
+    if (text == "Horror") {
+      const request = await axios.get(requests.fetchHorrorMovies);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+    if (text == "Romance") {
+      const request = await axios.get(requests.fetchRomanceMovies);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+      if (text == "Mystery") {
+      const request = await axios.get(requests.fetchMystery);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+    if (text == "Sci-Fi") {
+      const request = await axios.get(requests.fetchSciFi);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+    if (text == "Western") {
+      const request = await axios.get(requests.fetchWestern);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+    if (text == "Animation") {
+      const request = await axios.get(requests.fetchAnimation);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }if (text == "TV") {
+      const request = await axios.get(requests.fetchTV);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
   }
 
   async fetchData() {

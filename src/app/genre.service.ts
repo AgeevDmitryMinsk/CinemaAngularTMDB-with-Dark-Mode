@@ -9,7 +9,16 @@ export interface Genre {
 export class GenreService {
   genres: Genre[] = [
     { id: 28, name: 'Action' },
-    { id: 35, name: 'Comedy' }
+    { id: 35, name: 'Comedy' },
+    { id: 27, name: 'Horror'},
+    { id: 10749, name: 'Romance'},
+    { id: 9648, name: 'Mystery'},
+    { id: 878, name: 'SciFi'},
+    { id: 37, name: 'Western'},
+    { id: 16, name: 'Animation'},
+    { id: 10770, name: 'TV'},
+
+
   ]
 
   getById(id: number) {
