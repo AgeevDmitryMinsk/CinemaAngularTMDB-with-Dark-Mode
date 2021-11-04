@@ -11,7 +11,9 @@ import {NavComponent} from "./nav/nav.component";
 const routes: Routes = [
   { path: '', redirectTo: 'movie', pathMatch: 'full'},
   {path: 'movie', component: NavComponent},
-  {path: 'movie/new-page', component: NewPageComponent},
+  {path: 'movie/:message', component: NewPageComponent},
+
+  // {path: 'movie/new-page', component: NewPageComponent},
 
   // {path: 'movie/video-card', component: VideoCardComponent},
   // {path: 'footer', component: FooterComponent},

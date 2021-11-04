@@ -1,0 +1,16 @@
+.videoCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1000ms;
+  margin: 1rem;
+  border-radius: 3px;
+  box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.videoCard > img {
+  height: 300px;
+  object-fit: contain;
+  width: 100%;
+}

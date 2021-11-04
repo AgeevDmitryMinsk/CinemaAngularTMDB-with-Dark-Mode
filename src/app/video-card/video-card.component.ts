@@ -15,8 +15,8 @@ export class VideoCardComponent implements OnInit {
     // console.log(this.router.url)
     alert(`Вы выбрали фильм: ${message}`);
 
-    this.router.navigate([`/movie/new-page`] )
-    //this.router.navigate([`/movie${message}`] )
+    // this.router.navigate([`/movie/new-page`] )
+    this.router.navigate([`/movie/${message}`] )
     console.log(this.router.url);
 
   }
