@@ -19,6 +19,8 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { ResultsComponent } from './results/results.component';
 import { VideoCardComponent } from './video-card/video-card.component';
+import {AppRoutingModule} from "./app-routing.module";
+import { NewPageComponent } from './new-page/new-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { VideoCardComponent } from './video-card/video-card.component';
     HeaderComponent,
     NavComponent,
     ResultsComponent,
-    VideoCardComponent
+    VideoCardComponent,
+    NewPageComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { VideoCardComponent } from './video-card/video-card.component';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    MatExpansionModule
+    MatExpansionModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,12 @@
 <div class="content mat-app-background">
-<!--  <p>video-card works!</p>-->
-  <div class="videoCard" (click)="this.movieSelect(this.movie.title !== undefined
-                                ? this.movie.title +'. '+ this.movie.overview
-                                : this.movie.name +'. '+ this.movie.overview)">
 
-    <img src="{{baseUrl}}{{movie.backdrop_path || movie.poster_path}}" alt="" srcset="">
+<!--  <p>video-card works!</p>-->
+<!--  [routerLink]="['/movie/new-page']"-->
+  <div class="videoCard" (click)="this.movieSelect(this.movie.title !== undefined
+                                ? this.movie.backdrop_path || this.movie.poster_path
+                                : this.movie.backdrop_path || this.movie.poster_path)">
+<!--    <h6><a [routerLink]="['/movie/new-page']">New page</a></h6>-->
+    <img src="{{baseUrl}}{{this.movie.backdrop_path || this.movie.poster_path}}" alt="" srcset="">
     <p>{{movie.release_date || movie.first_air_date}}</p>
     <!--  <p>{{(movie.overview)|truncate:[60]}}</p>-->
     <h2>{{this.movie.title !== undefined ? this.movie.title: this.movie.name}}</h2>

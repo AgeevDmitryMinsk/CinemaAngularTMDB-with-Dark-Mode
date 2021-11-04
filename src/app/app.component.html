@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  CinemaAngularTMDB with Dark Mode
+  <a [routerLink]="['/']">CinemaAngularTMDB with Dark Mode Home Page</a>
   <div class="flex-stretch"></div>
 
   <mat-slide-toggle [formControl]="toggleControl" class="mr-8 app__icon">
@@ -13,6 +13,14 @@
 
 <app-header></app-header>
 
-<app-nav></app-nav>
+
+<!--<app-new-page></app-new-page>-->
+
+<!--<app-nav></app-nav>-->
+
+<router-outlet></router-outlet>
+
 
 <app-footer></app-footer>
+
+
