@@ -5,6 +5,7 @@ import {VideoCardComponent} from "./video-card/video-card.component";
 import {FooterComponent} from "./footer/footer.component";
 import {NewPageComponent} from "./new-page/new-page.component";
 import {NavComponent} from "./nav/nav.component";
+import {ErrorPageComponent} from "./error-page/error-page.component";
 
 
 
@@ -12,6 +13,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'movie', pathMatch: 'full'},
   {path: 'movie', component: NavComponent},
   {path: 'movie/:message', component: NewPageComponent},
+  {path: 'error', component: ErrorPageComponent},
+  {path: '**', redirectTo: '/error' }
 
   // {path: 'movie/new-page', component: NewPageComponent},
 

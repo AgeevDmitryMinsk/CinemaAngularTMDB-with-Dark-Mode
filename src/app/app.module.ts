@@ -21,6 +21,7 @@ import { ResultsComponent } from './results/results.component';
 import { VideoCardComponent } from './video-card/video-card.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { NewPageComponent } from './new-page/new-page.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NewPageComponent } from './new-page/new-page.component';
     NavComponent,
     ResultsComponent,
     VideoCardComponent,
-    NewPageComponent
+    NewPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
