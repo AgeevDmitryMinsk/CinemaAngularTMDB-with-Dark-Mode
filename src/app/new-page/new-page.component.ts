@@ -19,6 +19,7 @@ export class NewPageComponent implements OnInit {
     this.imageURL = this.router.url.slice(7)
     console.log(this.imageURL);
 
+    console.log(`movie in new-page.component: ${this.movie}`);
     // console.log(this.movie.title);
     // console.log(this.movie.vote_count);
     // console.log(this.movie.overview);
