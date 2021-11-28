@@ -2,9 +2,7 @@
 
 <!--  <p>video-card works!</p>-->
 <!--  [routerLink]="['/movie/new-page']"-->
-  <div class="videoCard" (click)="this.movieSelect(this.movie.title !== undefined
-                                ? this.movie.backdrop_path || this.movie.poster_path
-                                : this.movie.backdrop_path || this.movie.poster_path)"
+  <div class="videoCard" (click)="selectCard()"
   >
 <!--    <h6><a [routerLink]="['/movie/new-page']">New page</a></h6>-->
     <img src="{{baseUrl}}{{this.movie.backdrop_path || this.movie.poster_path}}" alt="" srcset="">
@@ -23,6 +21,7 @@
     <p>
       &#10084;: {{movie.vote_count}}
     </p>
+
 
   </div>
 </div>

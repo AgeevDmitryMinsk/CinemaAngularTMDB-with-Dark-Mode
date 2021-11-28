@@ -19,4 +19,8 @@ export class ResultsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectCard(id: any) {
+    this.movies = this.movies.filter((movies: any)=> movies.id == id)
+
+  }
 }

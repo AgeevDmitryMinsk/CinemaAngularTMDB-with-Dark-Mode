@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
 // import { HostListener } from "@angular/core";
 // import {Router} from "@angular/router";
@@ -9,6 +9,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./video-card.component.scss']
 })
 export class VideoCardComponent implements OnInit {
+
+  @Output() onSelectCard = new EventEmitter<number>()
 
   public movieSelect(message: any){
     // console.log(message);
@@ -32,6 +34,11 @@ export class VideoCardComponent implements OnInit {
 
 
   ngOnInit(): void {
+  }
+
+  selectCard() {
+    this.onSelectCard.emit(this.movie.id)
+
   }
 
 }
