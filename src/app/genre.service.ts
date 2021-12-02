@@ -13,7 +13,7 @@ export class GenreService {
     { id: 27, name: 'Horror'},
     { id: 10749, name: 'Romance'},
     { id: 9648, name: 'Mystery'},
-    { id: 878, name: 'SciFi'},
+    { id: 878, name: 'Sci-Fi'},
     { id: 37, name: 'Western'},
     { id: 16, name: 'Animation'},
     { id: 10770, name: 'TV'},

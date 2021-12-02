@@ -63,6 +63,7 @@ export class NavComponent implements OnInit {
     }
     if (text == "Sci-Fi") {
       const request = await axios.get(requests.fetchSciFi);
+      console.log(`gdfsdfgsdg`);
       console.log(request.data.results);
       this.movies = request.data.results;
 
