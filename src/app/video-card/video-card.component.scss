@@ -7,12 +7,14 @@
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  filter: grayscale(1);
 
 }
 
 .videoCard:hover {
   transform: scale(1.05);
   border-radius: 13px;
+  filter: grayscale(0);
 }
 
 .videoCard > img {
