@@ -1,13 +1,15 @@
 .videoCard {
   //color: white;
   transition: transform 1000ms;
-  width: 500px;
+  //width: 500px;
+  min-height: 50%;
   margin: 1rem;
   border-radius: 3px;
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
   filter: grayscale(1);
+  flex: 1 1 auto;
 
 }
 
@@ -18,9 +20,9 @@
 }
 
 .videoCard > img {
-  height: 300px;
+  max-height: 300px;
   object-fit: contain;
-  width: 100%;
+  //width: 100%;
 }
 
 .videoCard:hover > h2 {
