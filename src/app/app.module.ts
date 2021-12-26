@@ -19,9 +19,10 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { ResultsComponent } from './results/results.component';
 import { VideoCardComponent } from './video-card/video-card.component';
-import {AppRoutingModule} from "./app-routing.module";
+import { AppRoutingModule} from "./app-routing.module";
 import { NewPageComponent } from './new-page/new-page.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     MatInputModule,
     MatCheckboxModule,
     MatExpansionModule,
-    AppRoutingModule
+    AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

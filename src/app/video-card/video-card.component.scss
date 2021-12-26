@@ -8,7 +8,7 @@
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  filter: grayscale(1);
+  filter: grayscale(0.5);
   flex: 1 1 auto;
 
 }
@@ -38,7 +38,7 @@
   padding: 1rem;
   max-height: 100%;
   transform: translateY(101%);
-  transition: transform 0.3s ease-in;
+  transition: transform 0.8s ease-in;
 }
 
 .videoCard:hover .overview {

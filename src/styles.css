@@ -1,0 +1,35 @@
+/*
+Error: Invalid CSS after "@include mat": expected selector or at-rule, was ".core();"
+        on line 5 of styles.scss
+
+1: @use '~@angular/material' as mat;
+2: 
+3: @import "~@angular/material/theming";
+4: 
+5: @include mat.core();
+6: 
+7: $angular-primary: mat.define-palette(mat.$teal-palette, 500, 100, 900);
+8: $angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+9: 
+10: $angular-warn: mat.define-palette(mat.$red-palette);
+
+Backtrace:
+styles.scss:5
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1238:in `expected'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:42:in `parse'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:414:in `_to_tree'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:387:in `run'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
+C:/Ruby27-x64/bin/sass:23:in `load'
+C:/Ruby27-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"@include mat\": expected selector or at-rule, was \".core();\"\A         on line 5 of styles.scss\A \A 1: @use '~@angular/material' as mat;\A 2: \A 3: @import \"~@angular/material/theming\";\A 4: \A 5: @include mat.core();\A 6: \A 7: $angular-primary: mat.define-palette(mat.$teal-palette, 500, 100, 900);\A 8: $angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);\A 9: \A 10: $angular-warn: mat.define-palette(mat.$red-palette);"; }

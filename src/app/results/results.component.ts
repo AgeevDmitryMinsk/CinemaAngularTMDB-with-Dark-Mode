@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import axios from '../axious';
-import requests from '../requests';
+// import axios from '../axious';
+// import requests from '../requests';
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
