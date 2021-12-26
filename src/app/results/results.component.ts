@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Injectable, Input, OnInit} from '@angular/core';
 // import axios from '../axious';
 // import requests from '../requests';
 @Component({
@@ -21,6 +21,8 @@ export class ResultsComponent implements OnInit {
 
   selectCard(id: any) {
     this.movies = this.movies.filter((movies: any)=> movies.id == id)
-
   }
+
+
+
 }

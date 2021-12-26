@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 // import axios from '../axious';
 import requests from '../requests';
 import {GenreService} from "../genre.service";
@@ -22,12 +22,12 @@ export interface FilmsData {
   vote_average?: number,
   vote_count?: number
 }
-
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
+@Injectable({providedIn: "root"})
 export class NavComponent implements OnInit {
 
   filmsData: FilmsData[] = [];
@@ -161,5 +161,10 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
     this.fetchData();
   }
+
+  getById(id: number) {
+    return this.movies.find( (p: any) => p.id === id)
+  }
+
 }
 

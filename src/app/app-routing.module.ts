@@ -12,7 +12,8 @@ import {ErrorPageComponent} from "./error-page/error-page.component";
 const routes: Routes = [
   { path: '', redirectTo: 'movie', pathMatch: 'full'},
   {path: 'movie', component: NavComponent},
-  {path: 'movie/:message', component: NewPageComponent},
+  {path: 'movie/:backdrop_path', component: NewPageComponent},
+  // { path: 'detail/:id', component: HeroDetailComponent },
   {path: 'error', component: ErrorPageComponent},
   {path: '**', redirectTo: '/error' }
 

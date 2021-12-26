@@ -1,9 +1,10 @@
 <div class="content mat-app-background">
 <!--  <p>results works!</p>-->
 
-  <div class="results">
+  <div class="results"> !!! ResultsComponent !!!!
     <app-video-card *ngFor="let name of movies" [movie]="name"
-                    (onSelectCard)="selectCard($event)">
+                    [routerLink]="['/movie', name.backdrop_path]">
+<!--                    (onSelectCard)="selectCard($event)">-->
     </app-video-card>
   </div>
 
