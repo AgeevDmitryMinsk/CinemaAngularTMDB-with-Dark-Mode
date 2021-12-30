@@ -36,10 +36,10 @@ export class VideoCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectCard() {
-    this.onSelectCard.emit(this.movie.id)
-
-  }
+  // selectCard() {
+  //   this.onSelectCard.emit(this.movie.id)
+  //
+  // }
 
 }
 

@@ -10,7 +10,7 @@ export interface FilmsData {
   adult?: boolean,
   backdrop_path?: string,
   genre_ids?: object,
-  id?: number,
+  id: number,
   original_language?: string,
   original_title?: string,
   overview?: string,
