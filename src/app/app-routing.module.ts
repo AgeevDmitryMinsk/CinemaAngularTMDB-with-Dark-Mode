@@ -12,17 +12,16 @@ import {ErrorPageComponent} from "./error-page/error-page.component";
 const routes: Routes = [
   { path: '', redirectTo: 'movie', pathMatch: 'full'},
   {path: 'movie', component: NavComponent},
-  {path: 'movie/:backdrop_path', component: NewPageComponent},
-  // { path: 'detail/:id', component: HeroDetailComponent },
+  //{path: 'movies', loadChildren: () => import('./components/movies/movies.module').then(m => m.MoviesModule)},
+
+  {path: 'movie/:backdrop_path', children: [{path: '', component: NewPageComponent}]},
+
+  //{path: 'movie/:backdrop_path', component: NewPageComponent},
+
   {path: 'error', component: ErrorPageComponent},
   {path: '**', redirectTo: '/error' }
 
-  // {path: 'movie/new-page', component: NewPageComponent},
 
-  // {path: 'movie/video-card', component: VideoCardComponent},
-  // {path: 'footer', component: FooterComponent},
-
-  // { path: '**', redirectTo: 'movie', pathMatch: 'full'},
 ];
 
 @NgModule({

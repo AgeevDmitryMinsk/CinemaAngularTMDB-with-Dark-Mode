@@ -1,8 +1,9 @@
+<!--<a [routerLink]="'/movies/detail/' + model.id ">-->
 <div class="content mat-app-background">
 
 <!--  <p>video-card works!</p>-->
 <!--  [routerLink]="['/movie/new-page']"-->
-  <div class="videoCard"   [routerLink]="['/movie', movie.backdrop_path]"
+  <div class="videoCard"   [routerLink]="['/movie', movie.id]"
   >
 <!--    <h6><a [routerLink]="['/movie/new-page']">New page</a></h6>-->
     <img src="{{baseUrl}}{{this.movie.backdrop_path || this.movie.poster_path}}" alt="" srcset="">

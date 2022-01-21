@@ -3,8 +3,7 @@
 
   <div class="results"> !!! ResultsComponent !!!!
     <app-video-card *ngFor="let name of movies" [movie]="name"
-                    [routerLink]="['/movie', name.backdrop_path]">
-<!--                    (onSelectCard)="selectCard($event)">-->
+                    [routerLink]="['/movie', name.url]">
     </app-video-card>
   </div>
 

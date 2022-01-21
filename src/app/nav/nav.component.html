@@ -1,21 +1,22 @@
 <div class="content mat-app-background">
-<!--  <p>nav works!</p>-->
-  <div class="nav" *ngFor="let genre of genreService.genres">
-<!--    <h2 (click)="fetchDataAgain('Trending')">Trending</h2>-->
-<!--    <h2 (click)="fetchDataAgain('Top Rated')">Top Rated</h2>-->
+<!--В ПЕРСПЕКТИВЕ ЗДЕСЬ НУЖНО СДЕЛАТЬ НАВИГАЦИЮ ПО ЖАНРУ:-->
+  <!--&lt;!&ndash;  <p>nav works!</p>&ndash;&gt;-->
+<!--  <div class="nav" *ngFor="let genre of genreService.getGenre()">-->
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Trending')">Trending</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Top Rated')">Top Rated</h2>&ndash;&gt;-->
 
-        <h2 (click)="fetchDataAgain(genre.name)">{{genre.name}}</h2>
-<!--    <h2 (click)="fetchDataAgain('Action')">Action</h2>-->
-<!--    <h2 (click)="fetchDataAgain('Comedy')">Comedy</h2>-->
+<!--        <h2 (click)="fetchDataAgain(genre.name)">{{genre.name}}</h2>-->
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Action')">Action</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Comedy')">Comedy</h2>&ndash;&gt;-->
 
-<!--    <h2 (click)="fetchDataAgain('Horror')">Horror</h2>-->
-<!--    <h2 (click)="fetchDataAgain('Romance')">Romance</h2>-->
-<!--    <h2 (click)="fetchDataAgain('Mystery')">Mystery</h2>-->
-<!--    <h2 (click)="fetchDataAgain('Sci-Fi')">Sci-Fi</h2>-->
-<!--    <h2 (click)="fetchDataAgain('Western')">Western</h2>-->
-<!--    <h2 (click)="fetchDataAgain('Animation')">Animation</h2>-->
-<!--    <h2 (click)="fetchDataAgain('Movie')">Tv</h2>-->
-  </div>
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Horror')">Horror</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Romance')">Romance</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Mystery')">Mystery</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Sci-Fi')">Sci-Fi</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Western')">Western</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Animation')">Animation</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2 (click)="fetchDataAgain('Movie')">Tv</h2>&ndash;&gt;-->
+<!--  </div>-->
 
 <!--  <div class="nav1" *ngFor="let filmData of filmsData.results">-->
 <!--    <p>{{filmData.title}}</p>-->

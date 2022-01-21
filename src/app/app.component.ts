@@ -10,6 +10,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 })
 export class AppComponent {
   title = 'AgeevDmitryMinsk';
+  ng = 'Angular'
 
 
   @HostBinding('class') className = '';

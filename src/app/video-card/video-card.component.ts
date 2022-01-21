@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./video-card.component.scss']
 })
 export class VideoCardComponent implements OnInit {
-
+  ng = 'Angular'
   @Output() onSelectCard = new EventEmitter<number>()
 
   public movieSelect(message: any){
