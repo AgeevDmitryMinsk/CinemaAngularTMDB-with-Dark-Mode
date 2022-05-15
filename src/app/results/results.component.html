@@ -1,9 +1,10 @@
 <div class="content mat-app-background">
-<!--  <p>results works!</p>-->
+
 
   <div class="results">
-    <app-video-card *ngFor="let name of movies" [movie]="name"
-                    (onSelectCard)="selectCard($event)">
+    <p>results works!</p>
+    <app-video-card *ngFor="let name of movies" [movie]="name" (onSelectCard)="selectCard($event)">
+
     </app-video-card>
   </div>
 

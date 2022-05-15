@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import instance from "../axious";
+import {API_KEY, languageURL, movieType} from "../requests";
 
 @Component({
   selector: 'app-new-page',
@@ -11,18 +13,22 @@ export class NewPageComponent implements OnInit {
   @Input() movie: any;
   imageURL: string = '';
   baseUrl = "https://image.tmdb.org/t/p/original/";
+  // newMovie: movieType | undefined
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    console.log(this.router.url);
-    this.imageURL = this.router.url.slice(7)
-    console.log(this.imageURL);
+  async ngOnInit()  {
+    //console.log(this.router.url);
+    let movieId = this.router.url.slice(7)
 
-    console.log(`movie in new-page.component: ${this.movie}`);
-    // console.log(this.movie.title);
-    // console.log(this.movie.vote_count);
-    // console.log(this.movie.overview);
+    // newMovie = https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
+    this.movie  = await instance.get<movieType>(`/movie/${movieId}?api_key=${API_KEY}&${languageURL}`).then(resp=>{
+      return resp.data
+    });
+
+    console.log(movieId)//675353
+    console.log(this.movie)
+    console.log(this.movie?.backdrop_path)
   }
 
 }

@@ -12,7 +12,7 @@ import {ErrorPageComponent} from "./error-page/error-page.component";
 const routes: Routes = [
   { path: '', redirectTo: 'movie', pathMatch: 'full'},
   {path: 'movie', component: NavComponent},
-  {path: 'movie/:message', component: NewPageComponent},
+  {path: `movie/:id`, component: NewPageComponent},
   {path: 'error', component: ErrorPageComponent},
   {path: '**', redirectTo: '/error' }
 

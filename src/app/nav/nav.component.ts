@@ -32,16 +32,7 @@ export class NavComponent implements OnInit {
       this.movies = request.data.results;
 
     }
-    // if (text == "Trending") {
-    //   const request = await axios.get(requests.fetchTreding);
-    //   console.log(request.data.results);
-    //   this.movies = request.data.results;
-    // }
-    // if (text == "Top Rated") {
-    //   const request = await axios.get(requests.fetchTopRated);
-    //   console.log(request.data.results);
-    //   this.movies = request.data.results;
-    // }
+
 
     if (text == "Horror") {
       const request = await axios.get(requests.fetchHorrorMovies);
