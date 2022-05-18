@@ -3,7 +3,9 @@
 
   <div class="results">
     <p>results works!</p>
-    <app-video-card *ngFor="let name of movies" [movie]="name" (onSelectCard)="selectCard($event)">
+<!--    <app-video-card *ngFor="let name of movies" [movie]="name" (onSelectCard)="selectCard($event)">-->
+    <app-video-card *ngFor="let movie of movies" [movie]="movie">
+<!--      (onSelectCard)="selectCard($event)">-->
 
     </app-video-card>
   </div>

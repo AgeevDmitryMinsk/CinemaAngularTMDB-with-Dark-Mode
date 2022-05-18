@@ -2,6 +2,7 @@
   //color: white;
   transition: transform 1000ms;
   width: 500px;
+  //height: 800px;
   margin: 1rem;
   border-radius: 3px;
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
@@ -17,7 +18,7 @@
   filter: grayscale(0);
 }
 
-.videoCard > img {
+.videoCard >a > img {
   height: 300px;
   object-fit: contain;
   width: 100%;

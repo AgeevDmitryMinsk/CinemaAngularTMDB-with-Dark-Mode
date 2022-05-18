@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import instance from "../axious";
 import {API_KEY, languageURL, movieType} from "../requests";
@@ -9,26 +9,39 @@ import {API_KEY, languageURL, movieType} from "../requests";
   styleUrls: ['./new-page.component.scss']
 })
 export class NewPageComponent implements OnInit {
+  public buy_ticket() {
+    alert(`* здесь можно будет купить билет`);
+  }
 
-  @Input() movie: any;
+  $observable: Promise<any> | undefined;
+  movie: any;
   imageURL: string = '';
   baseUrl = "https://image.tmdb.org/t/p/original/";
-  // newMovie: movieType | undefined
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
-  async ngOnInit()  {
+
+
+  async ngOnInit() {
     //console.log(this.router.url);
     let movieId = this.router.url.slice(7)
-
-    // newMovie = https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
     this.movie  = await instance.get<movieType>(`/movie/${movieId}?api_key=${API_KEY}&${languageURL}`).then(resp=>{
       return resp.data
-    });
+    }).catch(err=>this.router.navigate([`/error`])
 
-    console.log(movieId)//675353
-    console.log(this.movie)
-    console.log(this.movie?.backdrop_path)
+        //console.log(`error`,error);
+
+
+      );
+
+    this.$observable = instance.get<movieType>(`/movie/${movieId}?api_key=${API_KEY}&${languageURL}`).then(resp=>{
+      return resp.data
+    }).catch(error=>console.log(`Упс! что-то пошло не так:`, error.message))
+    // console.log(movieId)//675353
+    // console.log(this.movie)
+    // console.log(this.movie?.backdrop_path)
   }
 }
+
 //2022 Inspiration

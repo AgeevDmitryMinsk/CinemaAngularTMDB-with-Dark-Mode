@@ -38,7 +38,6 @@ export class VideoCardComponent implements OnInit {
 
   selectCard() {
     this.onSelectCard.emit(this.movie.id)
-
   }
 
 }
