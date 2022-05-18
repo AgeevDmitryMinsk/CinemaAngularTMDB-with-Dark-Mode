@@ -36,7 +36,9 @@ export class NewPageComponent implements OnInit {
     // console.log(movieId)//675353
     // console.log(this.movie)
     // console.log(this.movie?.backdrop_path)
+    console.log(`2022 Inspiration`)
   }
 }
 
 //2022 Inspiration
+
