@@ -9,8 +9,9 @@ import {API_KEY, languageURL, movieType} from "../requests";
   styleUrls: ['./new-page.component.scss']
 })
 export class NewPageComponent implements OnInit {
+
   public buy_ticket() {
-    alert(`* здесь можно будет купить билет`);
+    alert(`* здесь можно будет купить билет c ID = ${this.movie.id}, ${this.movie.title}`);
   }
 
   $observable: Promise<any> | undefined;
@@ -38,6 +39,8 @@ export class NewPageComponent implements OnInit {
     // console.log(this.movie?.backdrop_path)
     console.log(`2022 Inspiration`)
   }
+
+
 }
 
 //2022 Inspiration
