@@ -1,25 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import axios from '../axious';
+import requests from '../requests';
 import {GenreService} from "../genre.service";
-import {HttpClient} from "@angular/common/http";
-import {FilmsData, MovieService} from "../movie.service";
-
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-
 export class NavComponent implements OnInit {
 
-  filmsData: FilmsData[] = [];
 
-
-  constructor(
-    private http: HttpClient,
-    public genreService: GenreService,
-    private movieService: MovieService
-  ) {}
+  constructor(public genreService: GenreService) {}
   movies: any[] = [
   ];
 
@@ -28,32 +20,75 @@ export class NavComponent implements OnInit {
   async fetchDataAgain(text: string) {
     console.log(text);
 
+
+    if (text == "Action") {
+      const request = await axios.get(requests.fetchActionMovies);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }if (text == "Comedy") {
+      const request = await axios.get(requests.fetchComedyMovies);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+
+
+    if (text == "Horror") {
+      const request = await axios.get(requests.fetchHorrorMovies);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+    if (text == "Romance") {
+      const request = await axios.get(requests.fetchRomanceMovies);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+    if (text == "Mystery") {
+      const request = await axios.get(requests.fetchMystery);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+    if (text == "Sci-Fi") {
+      const request = await axios.get(requests.fetchSciFi);
+      console.log(`gdfsdfgsdg`);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+    if (text == "Western") {
+      const request = await axios.get(requests.fetchWestern);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
+    if (text == "Animation") {
+      const request = await axios.get(requests.fetchAnimation);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }if (text == "TV") {
+      const request = await axios.get(requests.fetchTV);
+      console.log(request.data.results);
+      this.movies = request.data.results;
+
+    }
   }
 
   async fetchData() {
+    // const request = await axios.get(requests.fetchTreding);
+    const request = await axios.get(requests.fetchActionMovies);
+    console.log(request.data.results);
+    this.movies = request.data.results;
 
-    return this.movieService.load().subscribe(response => {
-        //console.log(`Response`, response)
-        this.filmsData = response
-        console.log(`fetchData Treding filmsData`, this.filmsData.results);
-        this.movies = this.filmsData.results;
-        console.log(this.movies)
-      });
+    return request;
 
   }
-
   ngOnInit(): void {
-    //this.movieService.load();
-    console.log(`hello from navComponent`)
-    this.fetchData()
-
-
-  }
-
-  getById(id: number) {
-
-    return this.movies.find( (p: any) => p.id === id)
+    this.fetchData();
   }
 
 }
-

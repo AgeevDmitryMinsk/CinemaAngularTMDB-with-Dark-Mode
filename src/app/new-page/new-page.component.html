@@ -1,53 +1,29 @@
-<!--<p >new-page with selected film works!</p>-->
-<!--<div class="videoCard">-->
 
+<div class="videoCard" *ngIf="($observable | async)">
+  <!--<img src="{{baseUrl}}{{this.movie.backdrop_path}}" alt="" srcset="">-->
+<!--          &lt;!&ndash;  https://image.tmdb.org/t/p/original/aEGiJJP91HsKVTEPy1HhmN0wRLm.jpg&ndash;&gt;-->
+<!--    <p>!!! {{movie.title}} movie.title !!!</p>-->
 
+  <img src="{{baseUrl}}{{ this.movie.backdrop_path || this.movie.poster_path  }}" alt="" srcset="">
+  <!--    <img src="https://image.tmdb.org/t/p/original/egoyMDLqCxzjnSrWOz50uLlJWmD.jpg" alt="" srcset="">-->
+  <p>{{movie.release_date || movie.first_air_date}}</p>
+  <!--  <p>{{(movie.overview)|truncate:[60]}}</p>-->
+  <h2>{{this.movie.title !== undefined ? this.movie.title : this.movie.name}}</h2>
 
-<!--  <img src="{{baseUrl}}{{this.movie.backdrop_path || this.movie.poster_path}}" alt="" srcset="">-->
+  <div class="overview">
 
-
-<!--  -->
-
-<!--  <div class="overview">-->
-
-<!--    <h3>{{this.movie.title !== undefined ? this.movie.title: this.movie.name}}</h3>-->
-<!--    {{(movie.overview)|slice:0:400}}-->
-<!--    <br/>-->
-<!--    <button class="buy-ticket">Купить билет</button>-->
-<!--  </div>-->
-
-<!--  <p>-->
-<!--    &#10084;: {{movie.vote_count}}-->
-<!--  </p>-->
-
-<!--</div>-->
-<!--<a [routerLink]="'/movies/detail/' + model.id ">-->
-<div class="content mat-app-background">
-
-  <!--  <p>video-card works!</p>-->
-  <!--  [routerLink]="['/movie/new-page']"-->
-  <div class="videoCard"  >
-    <!--    <h6><a [routerLink]="['/movie/new-page']">New page</a></h6>-->
-    <img src="{{baseUrl}}{{this.movie?.backdrop_path || this.movie?.poster_path}}" alt="" srcset="">
-<!--    <img src="{{baseUrl}}{{this.movie.backdrop_path || this.movie.poster_path}}" alt="" srcset="">-->
-    <p>{{movie?.release_date || movie?.first_air_date}}</p>
-    <!--  <p>{{(movie.overview)|truncate:[60]}}</p>-->
-    <h2>{{this.movie?.title !== undefined ? this.movie?.title: this.movie?.name}}</h2>
-
-    <div class="overview">
-
-      <h3>{{this.movie?.title !== undefined ? this.movie?.title: this.movie?.name}}</h3>
-      {{(movie?.overview)|slice:0:400}}
-      <br/>
-      <button class="buy-ticket">Купить билет</button>
-    </div>
-
-    <p>
-      &#10084;: {{movie?.vote_count}}
-    </p>
-
-
+    <h3>{{this.movie.title !== undefined ? this.movie.title : this.movie.name}}</h3>
+    <h4> {{(movie.overview)|slice:0:400}} </h4>
+    <br/>
+    <button class="buy-ticket" (click)="this.buy_ticket()">Купить билет</button>
   </div>
+
+  <p>
+    &#10084;: {{movie.vote_count}}
+  </p>
+  <p>
+    movie Id: {{this.movie.id}}
+  </p>
+
 </div>
 
-<router-outlet></router-outlet>

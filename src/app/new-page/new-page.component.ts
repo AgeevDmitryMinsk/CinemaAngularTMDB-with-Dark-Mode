@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, Params, Router} from "@angular/router";
-import { take } from 'rxjs/operators';
-import {MovieService} from "../movie.service";
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+//import instance from "axious";
+import {API_KEY, languageURL, movieType} from "../requests";
+import instance from "../axious";
 
 @Component({
   selector: 'app-new-page',
@@ -10,39 +11,38 @@ import {MovieService} from "../movie.service";
 })
 export class NewPageComponent implements OnInit {
 
+  public buy_ticket() {
+    alert(`* здесь можно будет купить билет c ID = ${this.movie.id}, ${this.movie.title}`);
+  }
 
-
-
-  @Input() movie: any;
+  $observable: Promise<any> | undefined;
+  movie: any;
   imageURL: string = '';
   baseUrl = "https://image.tmdb.org/t/p/original/";
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private movieService: MovieService
-    ) {}
-
-
-
-
-  ngOnInit() {
-    this.route.params.subscribe(
-      params => {
-        console.log(`params`, params)
-        const id = params['backdrop_path'];  //const id = params.backdrop_path;
-        console.log(`id in MovieDetailComponent `, id );
-        this.getMovie(id);
-      }
-    );
+  constructor(private router: Router) {
   }
 
-  getMovie(id:string) {
-    this.movieService.getMovie(id).pipe(take(1)).subscribe(
-      movie => {
-        this.movie = movie;
-        console.log(`this.movie` , this.movie )
-      }, () => {}
+  async ngOnInit() {
+    //console.log(this.router.url);
+    let movieId = this.router.url.slice(7)
+    this.movie = await instance.get<movieType>(`/movie/${movieId}?api_key=${API_KEY}&${languageURL}`).then(resp => {
+      return resp.data
+    }).catch(() => this.router.navigate([`/error`])
+      //console.log(`error`,error);
     );
+
+    this.$observable = instance.get<movieType>(`/movie/${movieId}?api_key=${API_KEY}&${languageURL}`).then(resp => {
+      return resp.data
+    }).catch(error => console.log(`Упс! что-то пошло не так:`, error.message))
+    // console.log(movieId)//675353
+    // console.log(this.movie)
+    // console.log(this.movie?.backdrop_path)
+    console.log(`2022 Inspiration`)
   }
+
+
 }
+
+//2022 Inspiration
+

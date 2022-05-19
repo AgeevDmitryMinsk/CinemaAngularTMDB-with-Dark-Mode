@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./video-card.component.scss']
 })
 export class VideoCardComponent implements OnInit {
-  ng = 'Angular'
+
   @Output() onSelectCard = new EventEmitter<number>()
 
   public movieSelect(message: any){
@@ -18,7 +18,7 @@ export class VideoCardComponent implements OnInit {
     alert(`Вы выбрали фильм: ${message}`);
 
     // this.router.navigate([`/movie/new-page`] )
-    this.router.navigate([`/movie/${message}`] )
+    //this.router.navigate([`/movie/${message}`] )
     console.log(this.router.url);
     console.log(this.movie.title);
     console.log(this.movie.vote_count);
@@ -36,10 +36,9 @@ export class VideoCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // selectCard() {
-  //   this.onSelectCard.emit(this.movie.id)
-  //
-  // }
+  selectCard() {
+    this.onSelectCard.emit(this.movie.id)
+  }
 
 }
 

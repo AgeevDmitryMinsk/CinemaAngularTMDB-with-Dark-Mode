@@ -1,9 +1,11 @@
 .nav {
-  -webkit-transform: rotate(-4deg);
+  transform: rotate(-4deg);
   display: inline-block;
   flex-wrap: wrap;
-  padding: 10px;
-  padding-left: 40px;
+  padding: 10px 10px 10px 40px;
+  outline: aqua 1px solid;
+  color: aqua;
+
 }
 
 
